@@ -27,7 +27,7 @@ def save_and_encrypt_notes():
     master_secret = entry_masterkey.get()
 
     if len(title) == 0 or len(message) == 0 or len(master_secret) == 0:
-        messagebox.showinfo(title='Error!',message='Please Enter all info CORRECTLY!')
+        messagebox.showinfo(title='Error!', message='Please Enter all info CORRECTLY!')
     else:
         message_encrypted = encode(master_secret,message)
 
@@ -53,7 +53,7 @@ def decrypt_notes():
             text.delete('1.0',END)
             text.insert('1.0',decrypted_message)
         except:
-            messagebox.showinfo(title='ERROR!',message='Please Enter ENCRYPTED Text!')
+            messagebox.showinfo(title='ERROR!', message='Please Enter ENCRYPTED Text!')
 
 window = Tk()
 window.title('Secret Notes')
@@ -84,10 +84,10 @@ label_masterkey.config(pady=5)
 entry_masterkey = Entry()
 entry_masterkey.pack()
 
-button_save = Button(text='Save & Encrypt',command=save_and_encrypt_notes)
+button_save = Button(text='Save & Encrypt', command=save_and_encrypt_notes)
 button_save.pack()
 
-button_save = Button(text='Decrypt',command=decrypt_notes)
+button_save = Button(text='Decrypt', command=decrypt_notes)
 button_save.pack()
 
 window.mainloop()
